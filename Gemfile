@@ -31,12 +31,12 @@ gem 'rails-i18n'
 gem 'rails', '4.2.5'
 
 
-group : production do
+group :production do
   gem 'pg'
 end
 
 group :development do
-gem 'sqlite3'
+  gem 'sqlite3'
 end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

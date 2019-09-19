@@ -1,0 +1,43 @@
+<h1 class="page-header">Admin</h1>
+<%= render partial: "shared/errors", locals: { obj: @admin} %>
+ <!-- /.row -->
+<div class="row">
+  <div class="col-lg-10">
+  <div class="panel panel-default">
+      <div class="panel-heading">
+          <%= action %>
+      </div>
+      <!-- /.panel-heading -->
+      <div class="panel-body">
+          <%= form_for([:backoffice, @admin]) do |f| %>
+          <div class="form-group">
+              <div class="form-group">  
+                <label>Name</label>
+                <%= f.text_field :name, class: "form-control", placeholder: "Name", autofocus: true%>
+              </div>
+              <div class="form-group">
+                <%= f.label 'Email' %>
+                <%= f.text_field :email, class: "form-control", placeholder: "Email"%>
+              </div>
+              <% if policy(@admin).edit? %>
+                <div class="form-group">
+                  <%= f.label 'Tipo de acesso' %>
+                  <%= f.collection_radio_buttons(:role, options_for_role, :id, :description) do |b| %>
+                    <div class="form-group">
+                     <%= b.label {b.radio_button + b.text} %>
+                    </div>
+                  <%end%>
+                </div>
+              <%end%>
+              <label>Password</label>
+              <%= f.password_field :password, class: "form-control", placeholder: "Password"%>
+              <label>Password Confirmation</label>
+              <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Password Confirmation"%>
+          </div>
+              <button type="submit" class="btn btn-default">Submit</button>
+        <%end%>
+      </div>
+      <!-- /.panel-body -->
+  </div>
+    <!-- /.panel -->
+</div>

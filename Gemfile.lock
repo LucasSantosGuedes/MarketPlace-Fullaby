@@ -168,9 +168,10 @@ GEM
       mime-types
       mimemagic (~> 0.3.0)
       terrapin (~> 0.6.0)
+    pg (1.1.4)
     pundit (2.0.0)
       activesupport (>= 3.0.0)
-    rack (1.6.8)
+    rack (1.6.12)
     rack-protection (1.5.5)
       rack
     rack-test (0.6.3)
@@ -314,6 +315,7 @@ DEPENDENCIES
   mysql2 (~> 0.3.18)
   nodejs-rails
   paperclip
+  pg
   pundit
   rails (= 4.2.5)
   rails-assets-bootstrap (= 3.3.7)!
